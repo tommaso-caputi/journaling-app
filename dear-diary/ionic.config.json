@@ -1,0 +1,7 @@
+{
+  "name": "DearDiary",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

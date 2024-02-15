@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin: 5%;
+}
+
+.container2 {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.margin {
+    margin-bottom: 5%;
+}
+
+.margin2 {
+    margin-bottom: 20%;
+}
+
+.bold {
+    font-weight: bold;
+}

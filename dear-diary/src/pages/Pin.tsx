@@ -6,7 +6,7 @@ const Pin: React.FC = () => {
             <IonHeader>
                 <IonToolbar>
                     <IonButtons slot="start">
-                        <IonBackButton defaultHref="/mainlog"></IonBackButton>
+                        <IonBackButton text="" defaultHref="/mainlog"></IonBackButton>
                     </IonButtons>
                     <IonTitle>Pin</IonTitle>
                 </IonToolbar>

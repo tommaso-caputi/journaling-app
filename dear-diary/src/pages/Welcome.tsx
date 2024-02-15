@@ -4,7 +4,7 @@ import './Welcome.css';
 
 const Welcome: React.FC = () => {
   return (
-    <IonPage>
+    <IonPage className='background'>
       <div className='container'>
         <div></div>
         <div></div>

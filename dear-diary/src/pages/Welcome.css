@@ -5,6 +5,14 @@
     justify-content: space-around;
     height: 100%;
     margin: 5%;
+
+}
+
+
+.background {
+    background-image: linear-gradient(45deg, #9DA6A7 43%, rgba(0, 0, 0, 0) 33%), linear-gradient(45deg, #FFB498 55%, #FFC69A 33%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .container2 {

@@ -45,9 +45,9 @@ const SignUp: React.FC = () => {
                 throw new Error();
             } else {
                 const responseData = await response.json();
+                setToastMessage(responseData.message);
+                setIsOpen(true);
                 if (responseData.status) {
-                    setToastMessage(responseData.message);
-                    setIsOpen(true);
                     setUserData({ email: email, name: name, password: password });
                     history.push('/mainlog/pin');
                 }

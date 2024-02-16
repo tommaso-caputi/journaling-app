@@ -27,15 +27,15 @@ const Login: React.FC = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ command: 'login', email: email })
+                body: JSON.stringify({ command: 'login', email: email, password: password })
             });
             if (!response.ok) {
                 throw new Error();
             } else {
                 const responseData = await response.json();
+                setToastMessage(responseData.message);
+                setIsOpen(true);
                 if (responseData.status) {
-                    setToastMessage(responseData.message);
-                    setIsOpen(true);
                     setUserData({ email: email, name: responseData.name, password: password })
                     history.push('/mainhome');
                 }

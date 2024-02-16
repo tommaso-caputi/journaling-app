@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonButton, IonContent, IonInput, IonItem, IonPage, IonText, IonToast } from '@ionic/react';
+import { IonButton, IonContent, IonInput, IonItem, IonLabel, IonList, IonPage, IonText, IonToast } from '@ionic/react';
 import Header from '../../../components/Header';
 import { useHistory } from 'react-router-dom';
 import './SingUp.css';
@@ -10,6 +10,7 @@ const SignUp: React.FC = () => {
     const [toastMessage, setToastMessage] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const history = useHistory();
 
     const validateEmail = (email: string): boolean => {
@@ -17,6 +18,11 @@ const SignUp: React.FC = () => {
         return emailRegex.test(email);
     };
     const handleContinueClick = async () => {
+        if (password.trim() === '') {
+            setToastMessage("Please enter your password");
+            setIsOpen(true);
+            return;
+        }
         if (name.trim() === '') {
             setToastMessage("Please enter your name");
             setIsOpen(true);
@@ -33,7 +39,7 @@ const SignUp: React.FC = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ command: 'prova' })
+                body: JSON.stringify({ command: 'register', name: name, email: email, password: password })
             });
             if (!response.ok) {
                 throw new Error();
@@ -42,7 +48,7 @@ const SignUp: React.FC = () => {
                 if (responseData.status) {
                     setToastMessage(responseData.message);
                     setIsOpen(true);
-                    setUserData({ email: email, name: name });
+                    setUserData({ email: email, name: name, password: password });
                     history.push('/mainlog/pin');
                 }
             }
@@ -60,20 +66,23 @@ const SignUp: React.FC = () => {
                     <div className='margin-top'>
                         <IonText className='text'>Name</IonText>
                         <IonItem lines="none">
-                            <IonInput value={name} onIonInput={(e) => setName(e.detail.value!)}></IonInput>
+                            <IonInput id="nameInput" value={name} onIonInput={(e) => setName(e.detail.value!)}></IonInput>
                         </IonItem>
                         <div className='divider-horizontal'></div>
                         <IonText className='text'>Email</IonText>
                         <IonItem lines="none">
-                            <IonInput type='email' value={email} onIonInput={(e) => setEmail(e.detail.value!)}></IonInput>
+                            <IonInput id="emailInput" type='email' value={email} onIonInput={(e) => setEmail(e.detail.value!)}></IonInput>
+                        </IonItem>
+                        <div className='divider-horizontal'></div>
+                        <IonText className='text'>Password</IonText>
+                        <IonItem lines="none">
+                            <IonInput id="passwordInput" type='password' value={password} onIonInput={(e) => setPassword(e.detail.value!)}></IonInput>
                         </IonItem>
                         <div className='divider-horizontal'></div>
                     </div>
-                    <div>
-                        <IonButton className='margin-bottom' onClick={handleContinueClick}>
-                            Continue
-                        </IonButton>
-                    </div>
+                    <IonButton className='margin-bottom' onClick={handleContinueClick}>
+                        Continue
+                    </IonButton>
                 </div>
                 <IonToast
                     isOpen={isOpen}

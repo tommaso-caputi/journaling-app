@@ -26,6 +26,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import MainHome from './pages/MainHome';
 import MainLog from './pages/MainLog';
+import Pin from './pages/Pin';
 
 setupIonicReact();
 
@@ -35,6 +36,9 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route exact path="/mainlog">
           <MainLog />
+        </Route>
+        <Route exact path="/mainlog/pin">
+          <Pin />
         </Route>
         <Route exact path="/mainhome">
           <MainHome />

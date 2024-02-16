@@ -1,6 +1,7 @@
 import { IonButton, IonContent, IonPage } from '@ionic/react';
 import Header from '../components/Header';
 
+
 const Pin: React.FC = () => {
     return (
         <IonPage>

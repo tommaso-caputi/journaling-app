@@ -1,18 +1,12 @@
-import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonNavLink, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonPage } from '@ionic/react';
+import Header from '../components/Header';
 
 const Pin: React.FC = () => {
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonButtons slot="start">
-                        <IonBackButton text="" defaultHref="/mainlog"></IonBackButton>
-                    </IonButtons>
-                    <IonTitle>Pin</IonTitle>
-                </IonToolbar>
-            </IonHeader>
+            <Header url='/mainlog' />
             <IonContent class="ion-padding">
-                <IonButton href="/mainhome">continue</IonButton>
+                <IonButton href="/mainhome">continue(pin)</IonButton>
             </IonContent>
         </IonPage>
     );

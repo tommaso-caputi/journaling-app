@@ -1,6 +1,7 @@
-import { IonButton, IonContent, IonHeader, IonNavLink, IonPage, IonText, IonTitle, IonToolbar } from '@ionic/react';
-import Pin from './Pin';
+import { IonButton, IonNavLink, IonPage, IonText } from '@ionic/react';
 import './Welcome.css';
+import Pin from '../Pin';
+import SignUp from '../SignUp/SingUp';
 
 const Welcome: React.FC = () => {
   return (
@@ -15,9 +16,11 @@ const Welcome: React.FC = () => {
             <h1 className='bold'>DearDiary</h1>
             <h3>Save moments of your life</h3>
           </div>
-          <IonButton className='margin'>
-            Get started
-          </IonButton>
+          <IonNavLink routerDirection="forward" component={() => <SignUp />}>
+            <IonButton className='margin'>
+              Get started
+            </IonButton>
+          </IonNavLink>
           <IonNavLink routerDirection="forward" component={() => <Pin />}>
             <IonText>
               Already user? <IonText className='bold'>Log in</IonText>

@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
+    margin: 5%;
+
+}
+
+.margin-bottom {
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+.margin-top {
+    margin-top: 12%;
+    text-align: left;
+}
+
+.divider-horizontal {
+    top: 198px;
+    left: 24px;
+    width: 327px;
+    height: 2px;
+    background-color: #ffab7f;
+    border-radius: 2px;
+    margin-bottom: 10%;
+}
+
+.text {
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+}

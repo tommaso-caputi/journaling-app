@@ -28,6 +28,7 @@ import MainHome from './pages/Home/MainHome';
 import MainLog from './pages/Log/MainLog';
 import Pin from './pages/Log/Pin';
 import Login from './pages/Log/Login/Login';
+import NewPin from './pages/Log/NewPin';
 
 setupIonicReact();
 
@@ -40,6 +41,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/mainlog/pin">
           <Pin />
+        </Route>
+        <Route exact path="/mainlog/newpin">
+          <NewPin />
         </Route>
         <Route exact path="/mainlog/login">
           <Login />

@@ -49,7 +49,7 @@ const SignUp: React.FC = () => {
                 setIsOpen(true);
                 if (responseData.status) {
                     setUserData({ email: email, name: name, password: password });
-                    history.push('/mainlog/pin');
+                    history.push('/mainlog/newpin');
                 }
             }
         } catch (error) {

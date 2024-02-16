@@ -37,7 +37,7 @@ const Login: React.FC = () => {
                 setIsOpen(true);
                 if (responseData.status) {
                     setUserData({ email: email, name: responseData.name, password: password })
-                    history.push('/mainhome');
+                    history.push('/mainlog/newpin');
                 }
             }
         } catch (error) {

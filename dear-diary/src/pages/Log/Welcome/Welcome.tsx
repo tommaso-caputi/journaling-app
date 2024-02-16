@@ -1,9 +1,22 @@
 import { IonButton, IonNavLink, IonPage, IonText } from '@ionic/react';
 import './Welcome.css';
-import Pin from '../Pin';
 import SignUp from '../SignUp/SingUp';
+import { useHistory } from 'react-router';
+import { useEffect, useRef } from 'react';
+import { getLogged } from '../../../data/data';
+import Login from '../Login/Login';
 
 const Welcome: React.FC = () => {
+  const history = useHistory();
+  const count = useRef(0);
+  useEffect(() => {
+    if (count.current !== 0) {
+      if (getLogged()) {
+        history.push('/mainlog/pin');
+      }
+    }
+    count.current++;
+  }, [])
   return (
     <IonPage className='background'>
       <div className='container'>
@@ -21,7 +34,7 @@ const Welcome: React.FC = () => {
               Get started
             </IonButton>
           </IonNavLink>
-          <IonNavLink routerDirection="forward" component={() => <Pin />}>
+          <IonNavLink routerDirection="forward" component={() => <Login />}>
             <IonText>
               Already user? <IonText className='bold'>Log in</IonText>
             </IonText>

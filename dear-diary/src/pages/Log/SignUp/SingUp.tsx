@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { IonButton, IonContent, IonInput, IonItem, IonPage, IonText, IonToast } from '@ionic/react';
-import Header from '../../components/Header';
+import Header from '../../../components/Header';
 import { useHistory } from 'react-router-dom';
 import './SingUp.css';
-import { setUserData } from '../../data/data';
+import { setUserData } from '../../../data/data';
 
 const SignUp: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);

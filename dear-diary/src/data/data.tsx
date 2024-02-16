@@ -8,3 +8,7 @@ export const setUserData = (json: UserData) => {
     localStorage.setItem('logged', 'true');
 }
 
+
+export const getLogged = () => {
+    return localStorage.getItem('logged') === 'true';
+}

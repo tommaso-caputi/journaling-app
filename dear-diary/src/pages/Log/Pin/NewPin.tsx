@@ -3,7 +3,7 @@ import Header from '../../../components/Header';
 import { useHistory } from 'react-router';
 import './Pin.css';
 import { useState } from 'react';
-import { savePin } from '../../../data/data';
+import { savePin, setLogged } from '../../../data/data';
 import { backspaceOutline, closeOutline } from 'ionicons/icons';
 
 const NewPin: React.FC = () => {
@@ -17,6 +17,7 @@ const NewPin: React.FC = () => {
             savePin(pin.join(''))
             setToastMessage('Pin saved successfully');
             setIsOpen(true);
+            setLogged('true');
             history.push('/mainhome');
         } else {
             setToastMessage('Pin is not fully filled with numbers.');

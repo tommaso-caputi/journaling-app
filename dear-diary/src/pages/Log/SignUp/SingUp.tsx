@@ -3,7 +3,7 @@ import { IonButton, IonContent, IonInput, IonItem, IonLabel, IonList, IonPage, I
 import Header from '../../../components/Header';
 import { useHistory } from 'react-router-dom';
 import './SingUp.css';
-import { setUserData, sha256 } from '../../../data/data';
+import { setLogged, setUserData, sha256 } from '../../../data/data';
 
 const SignUp: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);

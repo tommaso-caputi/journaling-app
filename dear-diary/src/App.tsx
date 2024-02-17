@@ -30,7 +30,7 @@ import Pin from './pages/Log/Pin/Pin';
 import Login from './pages/Log/Login/Login';
 import NewPin from './pages/Log/Pin/NewPin';
 
-setupIonicReact();
+setupIonicReact({ mode: 'ios' });
 
 const App: React.FC = () => (
   <IonApp>

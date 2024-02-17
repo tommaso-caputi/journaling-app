@@ -8,14 +8,10 @@ import Login from '../Login/Login';
 
 const Welcome: React.FC = () => {
   const history = useHistory();
-  const count = useRef(0);
   useEffect(() => {
-    if (count.current !== 0) {
-      if (getLogged()) {
-        history.push('/mainlog/pin');
-      }
+    if (getLogged()) {
+      history.push('/mainlog/pin');
     }
-    count.current++;
   }, [])
   return (
     <IonPage className='background'>

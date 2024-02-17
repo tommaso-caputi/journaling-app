@@ -3,12 +3,11 @@
     text-align: center;
     flex-direction: column;
     justify-content: space-between;
-    height: 95%;
-    margin: 5%
+    height: 100%;
 }
 
 .margin-bottom {
-    margin-bottom: 10%;
+    margin-bottom: 15%;
     width: 100%;
 }
 

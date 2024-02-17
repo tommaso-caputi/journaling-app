@@ -81,9 +81,11 @@ const SignUp: React.FC = () => {
                         </IonItem>
                         <div className='divider-horizontal'></div>
                     </div>
-                    <IonButton className='margin-bottom' onClick={handleContinueClick}>
-                        Continue
-                    </IonButton>
+                    <div>
+                        <IonButton className='margin-bottom' onClick={handleContinueClick}>
+                            Continue
+                        </IonButton>
+                    </div>
                 </div>
                 <IonToast
                     isOpen={isOpen}

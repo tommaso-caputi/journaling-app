@@ -10,9 +10,11 @@ const Homepage: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent class="ion-padding">
-        <IonNavLink routerDirection="forward" component={() => <NewEntry />}>
+        Name: {localStorage.getItem('name')}<br />
+        Email: {localStorage.getItem('email')}
+        {/* <IonNavLink routerDirection="forward" component={() => <NewEntry />}>
           <IonButton>+</IonButton>
-        </IonNavLink>
+        </IonNavLink> */}
       </IonContent>
     </IonPage>
   );

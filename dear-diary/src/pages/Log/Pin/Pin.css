@@ -1,7 +1,7 @@
 .circles-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 50%;
+    margin-top: 40%;
 }
 
 .circle-full {
@@ -53,4 +53,43 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.pinpad-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pinpad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 35px;
+}
+
+.pinpad-grid button {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+}
+
+.input-number {
+    color: var(--secondary-color);
+    font-size: 30px;
+    margin: 10%;
+}
+
+.icon-pad {
+    height: 50%;
+}
+
+.icon-size {
+    height: 205%;
+    color: var(--secondary-color);
+}
+
+.pin-text {
+    margin-top: 15%;
+    text-align: center;
+    color: var(--secondary-color);
 }

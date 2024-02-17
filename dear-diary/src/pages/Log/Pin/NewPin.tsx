@@ -1,9 +1,10 @@
-import { IonButton, IonContent, IonPage, IonText, IonToast } from '@ionic/react';
+import { IonButton, IonContent, IonIcon, IonPage, IonText, IonToast } from '@ionic/react';
 import Header from '../../../components/Header';
 import { useHistory } from 'react-router';
 import './Pin.css';
 import { useState } from 'react';
 import { savePin } from '../../../data/data';
+import { backspaceOutline, closeOutline } from 'ionicons/icons';
 
 const NewPin: React.FC = () => {
     const history = useHistory();
@@ -39,6 +40,9 @@ const NewPin: React.FC = () => {
         }
         setPin(newPin);
     };
+    const handlePinFullDelete = () => {
+        setPin(['', '', '', '']);
+    };
 
     return (
         <IonPage>
@@ -46,7 +50,7 @@ const NewPin: React.FC = () => {
             <IonContent scroll-y={false}>
                 <div className='container-pin'>
                     <div className='container-top'>
-                        <IonText className='text1'>Enter Pin</IonText>
+                        <IonText className='text1'>Set Pin</IonText>
                         <div className='circles-container'>
                             {pin.map((digit, index) => (
                                 <div key={index} className={digit ? 'circle-full' : 'circle-empty'}></div>
@@ -56,12 +60,17 @@ const NewPin: React.FC = () => {
                     <div className='pinpad-container'>
                         <div className='pinpad-grid'>
                             {[...Array(9)].map((_, index) => (
-                                <IonButton key={index} onClick={() => handlePinInput(pin.findIndex(digit => digit === ''), String(index + 1))}>
+                                <div className="input-number" key={index} onClick={() => handlePinInput(pin.findIndex(digit => digit === ''), String(index + 1))}>
                                     {index + 1}
-                                </IonButton>
+                                </div>
                             ))}
-                            <IonButton onClick={() => handlePinInput(pin.findIndex(digit => digit === ''), '0')}>0</IonButton>
-                            <IonButton onClick={handlePinDelete}>Delete</IonButton>
+                            <div className='icon-size'>
+                                <IonIcon icon={closeOutline} size="large" className="icon-pad" onClick={handlePinFullDelete}></IonIcon>
+                            </div>
+                            <div className="input-number" onClick={() => handlePinInput(pin.findIndex(digit => digit === ''), '0')}>0</div>
+                            <div className='icon-size'>
+                                <IonIcon icon={backspaceOutline} size="large" className="icon-pad" onClick={handlePinDelete}></IonIcon>
+                            </div>
                         </div>
                     </div>
                     <IonButton className='margin-bottom' onClick={handleContinue}>

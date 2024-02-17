@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IonButton, IonContent, IonInput, IonItem, IonPage, IonText, IonToast } from '@ionic/react';
 import Header from '../../../components/Header';
 import { useHistory } from 'react-router-dom';
-import { setUserData } from '../../../data/data';
+import { setUserData, sha256 } from '../../../data/data';
 
 const Login: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,12 +22,14 @@ const Login: React.FC = () => {
             return;
         }
         try {
+            const hashedPassword = await sha256(password)
+            console.log(hashedPassword);
             const response = await fetch('https://tommasocaputi.altervista.org/DearDiary/webhook.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ command: 'login', email: email, password: password })
+                body: JSON.stringify({ command: 'login', email: email, password: hashedPassword })
             });
             if (!response.ok) {
                 throw new Error();

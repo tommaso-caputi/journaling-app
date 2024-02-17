@@ -3,7 +3,7 @@ import { IonButton, IonContent, IonInput, IonItem, IonLabel, IonList, IonPage, I
 import Header from '../../../components/Header';
 import { useHistory } from 'react-router-dom';
 import './SingUp.css';
-import { setUserData } from '../../../data/data';
+import { setUserData, sha256 } from '../../../data/data';
 
 const SignUp: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -34,12 +34,13 @@ const SignUp: React.FC = () => {
             return;
         }
         try {
+            const hashedPassword = await sha256(password);
             const response = await fetch('https://tommasocaputi.altervista.org/DearDiary/webhook.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ command: 'register', name: name, email: email, password: password })
+                body: JSON.stringify({ command: 'register', name: name, email: email, password: hashedPassword })
             });
             if (!response.ok) {
                 throw new Error();
@@ -48,7 +49,7 @@ const SignUp: React.FC = () => {
                 setToastMessage(responseData.message);
                 setIsOpen(true);
                 if (responseData.status) {
-                    setUserData({ email: email, name: name, password: password });
+                    setUserData({ email: email, name: name, password: hashedPassword });
                     history.push('/mainlog/newpin');
                 }
             }

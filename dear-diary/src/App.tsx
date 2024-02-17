@@ -26,9 +26,9 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import MainHome from './pages/Home/MainHome';
 import MainLog from './pages/Log/MainLog';
-import Pin from './pages/Log/Pin';
+import Pin from './pages/Log/Pin/Pin';
 import Login from './pages/Log/Login/Login';
-import NewPin from './pages/Log/NewPin';
+import NewPin from './pages/Log/Pin/NewPin';
 
 setupIonicReact();
 

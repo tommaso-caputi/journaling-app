@@ -14,3 +14,10 @@ export const setUserData = (json: UserData) => {
 export const getLogged = () => {
     return localStorage.getItem('logged') === 'true';
 }
+
+export const savePin = (pin: string) => {
+    localStorage.setItem('pin', pin);
+}
+export const getPin = () => {
+    return localStorage.getItem('pin');
+}

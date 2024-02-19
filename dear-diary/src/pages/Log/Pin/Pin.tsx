@@ -3,7 +3,7 @@ import Header from '../../../components/Header';
 import { useHistory } from 'react-router';
 import './Pin.css';
 import { useState } from 'react';
-import { getPin, savePin, setLogged } from '../../../data/data';
+import { getPin } from '../../../data/data';
 import { backspaceOutline, closeOutline } from 'ionicons/icons';
 
 

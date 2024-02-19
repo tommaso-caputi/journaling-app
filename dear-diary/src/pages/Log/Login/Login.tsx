@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IonButton, IonContent, IonInput, IonItem, IonPage, IonText, IonToast } from '@ionic/react';
 import Header from '../../../components/Header';
 import { useHistory } from 'react-router-dom';
-import { setLogged, setUserData, sha256 } from '../../../data/data';
+import { setUserData, sha256 } from '../../../data/data';
 
 const Login: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);

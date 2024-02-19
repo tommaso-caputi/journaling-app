@@ -29,6 +29,7 @@ import MainLog from './pages/Log/MainLog';
 import Pin from './pages/Log/Pin/Pin';
 import Login from './pages/Log/Login/Login';
 import NewPin from './pages/Log/Pin/NewPin';
+import Profile from './pages/Home/Profile/Profile';
 
 setupIonicReact({ mode: 'ios' });
 
@@ -36,6 +37,7 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
+
         <Route exact path="/mainlog">
           <MainLog />
         </Route>
@@ -48,12 +50,19 @@ const App: React.FC = () => (
         <Route exact path="/mainlog/login">
           <Login />
         </Route>
+
         <Route exact path="/mainhome">
           <MainHome />
         </Route>
+        <Route exact path="/mainhome/profile">
+          <Profile />
+        </Route>
+
+
         <Route exact path="/">
           <Redirect to="/mainlog" />
         </Route>
+
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

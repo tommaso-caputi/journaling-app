@@ -1,5 +1,5 @@
 import { IonNav } from '@ionic/react';
-import Homepage from './Homepage';
+import Homepage from './Homepage/Homepage';
 
 const MainHome: React.FC = () => {
   return (

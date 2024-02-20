@@ -3,6 +3,7 @@ export interface UserData {
     name: string;
     password: string;
 }
+
 export const setUserData = (json: UserData) => {
     localStorage.setItem('name', json.name);
     localStorage.setItem('email', json.email);
@@ -27,3 +28,12 @@ export const getPin = () => {
 export const sha256 = async (s: string) => {
     return s;
 };
+
+
+
+export interface Entry {
+    content: string;
+    date: string;
+    title: string;
+    topics: string[];
+}

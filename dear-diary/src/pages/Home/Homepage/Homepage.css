@@ -1,0 +1,41 @@
+.container-home {
+    padding-top: 10%;
+}
+
+.bold2 {
+    color: var(--secondary-color);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.color2 {
+    color: var(--secondary-color);
+}
+
+.container-home2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.image {
+    width: 70px;
+    height: 70px;
+    border-radius: 100000px;
+    border: 1px solid var(--secondary-color);
+    box-sizing: border-box;
+    background-image: url('https://tommasocaputi.altervista.org/DearDiary/profile.jpeg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bold3 {
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+    margin-bottom: 6%;
+    margin-top: 10%;
+}

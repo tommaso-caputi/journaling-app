@@ -1,0 +1,5 @@
+.bold-new-entry-mood {
+    font-weight: bold;
+    font-size: 26px;
+    color: var(--secondary-color);
+}

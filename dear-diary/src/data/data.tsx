@@ -30,10 +30,15 @@ export const sha256 = async (s: string) => {
 };
 
 
-
 export interface Entry {
     content: string;
     date: string;
     title: string;
     topics: string[];
+}
+
+export const addNewEntry = (entry: Entry) => {
+    var temp = localStorage.getItem('entries');
+    console.log(temp);
+    //localStorage.setItem('entries',) 
 }

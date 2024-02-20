@@ -11,7 +11,7 @@ const Card: React.FC<CardProps> = ({ entry }) => {
         <>
             <div className='container-chips'>
                 {entry.topics.map((t, index) => (
-                    <div className='chip'>{t}</div>
+                    <div className='chip' key={index}>{t}</div>
                 ))}
             </div>
             <IonCard>

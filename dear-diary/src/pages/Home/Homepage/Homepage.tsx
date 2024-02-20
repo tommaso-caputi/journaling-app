@@ -34,7 +34,7 @@ const Homepage: React.FC = () => {
             <div className='bold3'>Recent entries</div>
             <div>
               {entries.map((entry, index) => (
-                <Card entry={entry} />
+                <Card key={index} entry={entry} />
               ))}
             </div>
           </div>

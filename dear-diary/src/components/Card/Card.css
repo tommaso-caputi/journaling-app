@@ -31,6 +31,7 @@ ion-chip {
     text-align: center;
     color: var(--secondary-color);
     margin-right: 2%;
+    margin-bottom: 2%;
     font-size: 12px;
     justify-content: center;
     align-items: center;
@@ -40,4 +41,5 @@ ion-chip {
 .container-chips {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }

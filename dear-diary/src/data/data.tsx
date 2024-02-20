@@ -39,7 +39,7 @@ export interface Entry {
 
 export const addNewEntry = (entry: Entry) => {
     const entries = JSON.parse(localStorage.getItem('entries') || '[]') as Entry[];
-    entries.push(entry);
+    entries.unshift(entry);
     localStorage.setItem('entries', JSON.stringify(entries));
 }
 

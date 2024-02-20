@@ -7,9 +7,17 @@ import { Entry } from '../../../data/data';
 
 const Homepage: React.FC = () => {
 
-  const [entries, setEntries] = useState<Entry[]>([
-    { title: 'Trip to Skagen', content: 'Today was awesome! Went to Skagen with Petra and John. Skagen is so calm and relaxing city, first we saw the city and then we went to the beach...', date: '10 May', topics: ['Happy', 'Sunny', 'Trip', 'Skagen', 'Friends'] }
-  ]);
+  const [entries, setEntries] = useState<Entry[]>(JSON.parse(localStorage.getItem('entries') || '[]'));
+
+  const truncateContent = (content: string): string => {
+    const maxLetters = 150;
+    if (content.length > maxLetters) {
+      return content.substring(0, maxLetters) + '...';
+    } else {
+      return content;
+    }
+  };
+  const firstFiveEntries = entries.slice(0, 5);
 
   return (
     <IonPage>
@@ -33,8 +41,8 @@ const Homepage: React.FC = () => {
           <div>
             <div className='bold3'>Recent entries</div>
             <div>
-              {entries.map((entry, index) => (
-                <Card key={index} entry={entry} />
+              {firstFiveEntries.map((entry, index) => (
+                <Card key={index} entry={{ ...entry, content: truncateContent(entry.content) }} />
               ))}
             </div>
           </div>

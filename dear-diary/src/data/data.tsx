@@ -39,6 +39,20 @@ export interface Entry {
 
 export const addNewEntry = (entry: Entry) => {
     var temp = localStorage.getItem('entries');
-    console.log(temp);
     //localStorage.setItem('entries',) 
+}
+
+
+// handle generating new entry
+export const addFeelingToNewEntry = (f: string) => {
+    var temp = localStorage.getItem('newEntry');
+    if (temp) {
+        var newEntry = JSON.parse(temp);
+        newEntry['feeling'] = f;
+        localStorage.setItem('newEntry', JSON.stringify(newEntry));
+    } else {
+        var newEntry = JSON.parse('{}');
+        newEntry['feeling'] = f;
+        localStorage.setItem('newEntry', JSON.stringify(newEntry));
+    }
 }

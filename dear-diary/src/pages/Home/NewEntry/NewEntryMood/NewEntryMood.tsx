@@ -1,7 +1,8 @@
-import { IonButton, IonContent, IonPage } from '@ionic/react';
+import { IonButton, IonContent, IonNavLink, IonPage } from '@ionic/react';
 import Header from '../../../../components/Header';
 import './NewEntryMood.css';
 import Slider from '../../../../components/Slider/Slider';
+import NewEntry from '../NewEntry';
 
 const NewEntryMood: React.FC = () => {
 
@@ -17,9 +18,11 @@ const NewEntryMood: React.FC = () => {
                     <div></div>
                     <Slider />
                     <div>
-                        <IonButton className='margin-bottom'>
-                            Continue
-                        </IonButton>
+                        <IonNavLink routerDirection="forward" component={() => <NewEntry />}>
+                            <IonButton className='margin-bottom'>
+                                Continue
+                            </IonButton>
+                        </IonNavLink>
                     </div>
                 </div>
             </IonContent>

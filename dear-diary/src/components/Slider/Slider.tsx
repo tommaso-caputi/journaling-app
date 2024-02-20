@@ -1,25 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './Slider.css';
+import { addFeelingToNewEntry } from "../../data/data";
 
 const Slider: React.FC = () => {
-    const [value, setValue] = useState(60);
+    const [value, setValue] = useState(50);
+    const [feeling, setFeeling] = useState('Neutral');
+    const [lastFeeling, setLastFeeling] = useState('');
+    const [icon, setIcon] = useState('😐');
+    const [iconSize, setIconSize] = useState(200);
+
+    useEffect(() => {
+        addFeelingToNewEntry(feeling);
+    }, [])
 
     const onValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(parseInt(event.target.value, 10));
-    }
-
-    let iconSize = 200;
-    let icon;
-    let feeling;
-    if (value <= 30) {
-        icon = "😞";
-        feeling = "Unhappy";
-    } else if (value > 30 && value <= 70) {
-        icon = "😐";
-        feeling = "Neutral";
-    } else {
-        icon = "😊";
-        feeling = "Happy";
+        const sliderValue = parseInt(event.target.value, 10);
+        setValue(sliderValue);
+        let currentFeeling = '';
+        let currentIcon = '';
+        if (sliderValue <= 30) {
+            currentFeeling = "Unhappy";
+            currentIcon = "😞";
+        } else if (sliderValue > 30 && sliderValue <= 70) {
+            currentFeeling = "Neutral";
+            currentIcon = "😐";
+        } else {
+            currentFeeling = "Happy";
+            currentIcon = "😊";
+        }
+        if (currentFeeling !== lastFeeling) {
+            setLastFeeling(currentFeeling);
+            addFeelingToNewEntry(currentFeeling);
+        }
+        setFeeling(currentFeeling);
+        setIcon(currentIcon);
     }
 
     return (

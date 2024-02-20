@@ -95,7 +95,7 @@ const Pin: React.FC = () => {
                 isOpen={isOpen}
                 message={toastMessage}
                 onDidDismiss={() => setIsOpen(false)}
-                duration={4000}
+                duration={1500}
             ></IonToast>
         </IonPage >
     );

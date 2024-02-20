@@ -49,10 +49,24 @@ export const addFeelingToNewEntry = (f: string) => {
     if (temp) {
         var newEntry = JSON.parse(temp);
         newEntry['feeling'] = f;
+        newEntry['topics'] = []
         localStorage.setItem('newEntry', JSON.stringify(newEntry));
     } else {
         var newEntry = JSON.parse('{}');
         newEntry['feeling'] = f;
+        localStorage.setItem('newEntry', JSON.stringify(newEntry));
+    }
+}
+
+export const addTopicToNewEntry = (t: string) => {
+    var temp = localStorage.getItem('newEntry');
+    if (temp) {
+        var newEntry = JSON.parse(temp);
+        if (newEntry['topics'].includes(t)) {
+            newEntry['topics'] = newEntry['topics'].filter((topic: string) => topic !== t);
+        } else {
+            newEntry['topics'].push(t);
+        }
         localStorage.setItem('newEntry', JSON.stringify(newEntry));
     }
 }

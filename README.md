@@ -1,6 +1,6 @@
 # DearDiary
 
-bla bla bla
+
 
 <div align="center">
   <kbd>
@@ -10,7 +10,7 @@ bla bla bla
 
 ## Description
 
-bla bla bla
+DearDiary is a sleek and intuitive journaling app designed to accompany you on your journey of self-reflection and personal growth. With its user-friendly interface and versatile features, Reflectify offers a seamless experience for capturing your thoughts, emotions, and experiences effortlessly.
 
 ### Features
 

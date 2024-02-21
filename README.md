@@ -14,8 +14,9 @@ DearDiary is a sleek and intuitive journaling app designed to accompany you on y
 
 ### Features
 
-- bla bla
-- bla bla bla
+- Secure and private: All data is stored locally with a PIN access
+- Mood tracking: the app keeps track of your emotionals
+- Customizable entry: traditional journaling format
 
 ### Built with
 
@@ -44,6 +45,7 @@ ionic serve
 
 ### To-do
 
+- [ ] Add moods with icons
 - [ ] Send email for change pin
 - [ ] Multi language support
   - [ ] Italian

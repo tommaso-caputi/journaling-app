@@ -75,11 +75,11 @@ const Pin: React.FC = () => {
                                 </div>
                             ))}
                             <div className='icon-size'>
-                                <IonIcon icon={closeOutline} size="large" className="icon-pad" onClick={handlePinFullDelete}></IonIcon>
+                                <IonIcon icon={closeOutline} size="large" onClick={handlePinFullDelete}></IonIcon>
                             </div>
                             <div className="input-number" onClick={() => handlePinInput(pin.findIndex(digit => digit === ''), '0')}>0</div>
                             <div className='icon-size'>
-                                <IonIcon icon={backspaceOutline} size="large" className="icon-pad" onClick={handlePinDelete}></IonIcon>
+                                <IonIcon icon={backspaceOutline} size="large" onClick={handlePinDelete}></IonIcon>
                             </div>
                         </div>
                         <div className='pin-text' onClick={handleForgot}>

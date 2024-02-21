@@ -71,10 +71,6 @@
     margin: 10%;
 }
 
-.icon-pad {
-    height: 50%;
-}
-
 .icon-size {
     height: 205%;
     color: var(--secondary-color);
@@ -84,4 +80,15 @@
     margin-top: 15%;
     text-align: center;
     color: var(--secondary-color);
+}
+
+.icon-size {
+    width: 30px;
+    height: 30px;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-top: 20%;
 }

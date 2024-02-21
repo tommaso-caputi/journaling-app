@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { Entry } from '../../../data/data';
 
 const Homepage: React.FC = () => {
-
   const [entries, setEntries] = useState<Entry[]>(JSON.parse(localStorage.getItem('entries') || '[]'));
 
   const truncateContent = (content: string): string => {

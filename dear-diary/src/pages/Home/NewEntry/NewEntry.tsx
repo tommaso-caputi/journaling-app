@@ -33,7 +33,8 @@ const NewEntry: React.FC = () => {
                 year: '2-digit'
             });
             addDataToNewEntry(titleValue.toString(), formattedDate, contentValue, placeValue.toString())
-            history.push('/');
+            history.push('/mainhome');
+            window.location.reload();
         }
     }
 

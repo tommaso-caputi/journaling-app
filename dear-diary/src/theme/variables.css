@@ -30,3 +30,7 @@ ion-toolbar {
 ion-back-button {
   --color: var(--text-color);
 }
+
+ion-fab {
+  margin-bottom: 3.5%;
+}

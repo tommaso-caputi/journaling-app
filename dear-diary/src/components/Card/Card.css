@@ -1,0 +1,45 @@
+ion-card-title {
+    font-size: 20px;
+}
+
+.text-card-content {
+    font-size: 15px;
+}
+
+ion-card-header {
+    padding-bottom: 2%;
+}
+
+ion-card {
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 16px;
+    margin-left: 0px;
+    margin-top: 3.5%;
+}
+
+ion-chip {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.chip {
+    width: 64px;
+    height: 24px;
+    background-color: var(--primary-color);
+    border-radius: 16px;
+    text-align: center;
+    color: var(--secondary-color);
+    margin-right: 2%;
+    margin-bottom: 2%;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container-chips {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

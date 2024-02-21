@@ -10,6 +10,7 @@ const Card: React.FC<CardProps> = ({ entry }) => {
     return (
         <>
             <div className='container-chips'>
+                <div className='chip' key={0}>{entry.feeling}</div>
                 {entry.topics.map((t, index) => (
                     <div className='chip' key={index}>{t}</div>
                 ))}

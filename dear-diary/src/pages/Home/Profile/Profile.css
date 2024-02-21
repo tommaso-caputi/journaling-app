@@ -1,0 +1,40 @@
+.container-profile {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.bold-profile {
+    color: var(--secondary-color);
+    text-align: left;
+    width: 100%;
+    margin-bottom: 4%;
+    font-weight: bold;
+}
+
+.container-profile2 {
+    width: 100%;
+}
+
+
+.profile-cards {
+    width: 96px;
+    height: 120px;
+    background-color: var(--secondary-color);
+    border-radius: 16px;
+    margin-right: 3%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icon-general {
+    width: 50%;
+    height: 50%;
+    color: white;
+}

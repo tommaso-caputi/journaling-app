@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonNavLink, IonPage } from '@ionic/react';
+import { IonButton, IonContent, IonPage } from '@ionic/react';
 import Header from '../../../../components/Header';
 import './NewEntryMood.css';
 import Slider from '../../../../components/Slider/Slider';
@@ -19,7 +19,7 @@ const NewEntryMood: React.FC = () => {
                     <div></div>
                     <Slider />
                     <div>
-                        <IonButton className='margin-bottom' onClick={() => { history.push('/mainhome/newentry') }}>
+                        <IonButton className='margin-bottom' onClick={() => { history.push('/mainhome/newentrytopic') }}>
                             Continue
                         </IonButton>
                     </div>

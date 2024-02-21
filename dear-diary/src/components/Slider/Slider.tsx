@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import './Slider.css';
-import { addFeelingToNewEntry } from "../../data/data";
+import { addFeelingToNewEntry, moodIcons } from "../../data/data";
+import { IonIcon } from "@ionic/react";
 
 const Slider: React.FC = () => {
     const [value, setValue] = useState(50);

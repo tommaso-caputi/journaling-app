@@ -31,6 +31,7 @@ export const sha256 = async (s: string) => {
 };
 
 export interface Entry {
+    feeling: any;
     content: string;
     date: string;
     title: string;
@@ -70,3 +71,63 @@ export const addDataToNewEntry = (title: string, date: string, content: string, 
 
     addNewEntry(newEntry);
 }
+
+
+export const getTop3MoodsWithCounts = (): { mood: string, count: number }[] => {
+    const entries = JSON.parse(localStorage.getItem('entries') || '[]') as Entry[];
+    const moodCounts: { [mood: string]: number } = {};
+    entries.forEach(entry => {
+        const mood = entry.feeling;
+        if (mood) {
+            moodCounts[mood] = (moodCounts[mood] || 0) + 1;
+        }
+    });
+
+    const sortedMoodEntries = Object.entries(moodCounts)
+        .map(([mood, count]) => ({ mood, count }))
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 3);
+
+    return sortedMoodEntries;
+}
+
+export const getTop3TopicsWithCounts = (): { topic: string, count: number }[] => {
+    const entries = JSON.parse(localStorage.getItem('entries') || '[]') as Entry[];
+    const topicCounts: { [topic: string]: number } = {};
+    entries.forEach(entry => {
+        entry.topics.forEach(topic => {
+            topicCounts[topic] = (topicCounts[topic] || 0) + 1;
+        });
+    });
+
+    const sortedTopicEntries = Object.entries(topicCounts)
+        .map(([topic, count]) => ({ topic, count }))
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 3);
+
+    return sortedTopicEntries;
+}
+
+
+
+import { happy, sad, heart, home, paw, sunny, bandage, fitness, people } from 'ionicons/icons';
+
+interface TopicIcons {
+    [key: string]: string;
+}
+
+export const moodIcons: { [key: string]: string } = {
+    "Happy": happy,
+    "Unhappy": sad,
+    "Neutral": sunny,
+};
+
+export const topicIcons: TopicIcons = {
+    "Friends": people,
+    "Love": heart,
+    "Home": home,
+    "Pet": paw,
+    "Life": sunny,
+    "Health": bandage,
+    "Sport": fitness,
+};

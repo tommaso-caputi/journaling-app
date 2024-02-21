@@ -1,9 +1,10 @@
-import { IonButton, IonContent, IonNavLink, IonPage } from '@ionic/react';
+import { IonButton, IonContent, IonPage } from '@ionic/react';
 import Header from '../../../../components/Header';
-import NewEntry from '../NewEntry';
 import TopicCards from '../../../../components/TopicCards/TopicCards';
+import { useHistory } from 'react-router';
 
 const NewEntryTopic: React.FC = () => {
+    const history = useHistory();
 
     return (
         <IonPage>
@@ -18,11 +19,9 @@ const NewEntryTopic: React.FC = () => {
                         <TopicCards />
                     </div>
                     <div>
-                        <IonNavLink routerDirection="forward" component={() => <NewEntry />}>
-                            <IonButton className='margin-bottom'>
-                                Continue
-                            </IonButton>
-                        </IonNavLink>
+                        <IonButton className='margin-bottom' onClick={() => { history.push('/mainhome/newentry') }}>
+                            Continue
+                        </IonButton>
                     </div>
                 </div>
             </IonContent>

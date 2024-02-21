@@ -2,9 +2,10 @@ import { IonButton, IonContent, IonNavLink, IonPage } from '@ionic/react';
 import Header from '../../../../components/Header';
 import './NewEntryMood.css';
 import Slider from '../../../../components/Slider/Slider';
-import NewEntryTopic from '../NewEntryTopic/NewEntryTopic';
+import { useHistory } from 'react-router';
 
 const NewEntryMood: React.FC = () => {
+    const history = useHistory();
 
     return (
         <IonPage>
@@ -18,11 +19,9 @@ const NewEntryMood: React.FC = () => {
                     <div></div>
                     <Slider />
                     <div>
-                        <IonNavLink routerDirection="forward" component={() => <NewEntryTopic />}>
-                            <IonButton className='margin-bottom'>
-                                Continue
-                            </IonButton>
-                        </IonNavLink>
+                        <IonButton className='margin-bottom' onClick={() => { history.push('/mainhome/newentry') }}>
+                            Continue
+                        </IonButton>
                     </div>
                 </div>
             </IonContent>

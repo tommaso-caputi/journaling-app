@@ -24,12 +24,15 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import MainHome from './pages/Home/MainHome';
 import MainLog from './pages/Log/MainLog';
 import Pin from './pages/Log/Pin/Pin';
 import Login from './pages/Log/Login/Login';
 import NewPin from './pages/Log/Pin/NewPin';
 import Profile from './pages/Home/Profile/Profile';
+import Homepage from './pages/Home/Homepage/Homepage';
+import NewEntryMood from './pages/Home/NewEntry/NewEntryMood/NewEntryMood';
+import NewEntryTopic from './pages/Home/NewEntry/NewEntryTopic/NewEntryTopic';
+import NewEntry from './pages/Home/NewEntry/NewEntry';
 
 setupIonicReact({ mode: 'ios' });
 
@@ -52,7 +55,16 @@ const App: React.FC = () => (
         </Route>
 
         <Route exact path="/mainhome">
-          <MainHome />
+          <Homepage />
+        </Route>
+        <Route exact path="/mainhome/newentrymood">
+          <NewEntryMood />
+        </Route>
+        <Route exact path="/mainhome/newentrytopic">
+          <NewEntryTopic />
+        </Route>
+        <Route exact path="/mainhome/newentry">
+          <NewEntry />
         </Route>
         <Route exact path="/mainhome/profile">
           <Profile />

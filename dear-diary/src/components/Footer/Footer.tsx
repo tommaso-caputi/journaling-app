@@ -2,7 +2,6 @@ import { IonButton, IonFab, IonFabButton, IonFooter, IonIcon, IonNavLink } from 
 import { add, home, personOutline } from 'ionicons/icons';
 import './Footer.css';
 import { useHistory } from 'react-router';
-import NewEntryMood from '../../pages/Home/NewEntry/NewEntryMood/NewEntryMood';
 
 interface FooterProps {
     goto: string;
@@ -21,13 +20,13 @@ const Footer: React.FC<FooterProps> = ({ goto }) => {
 
     return (
         <>
-            <IonNavLink routerDirection="forward" component={() => <NewEntryMood />}>
-                <IonFab slot="fixed" vertical="bottom" horizontal="center">
-                    <IonFabButton>
-                        <IonIcon icon={add} className='icon-color-selected'></IonIcon>
-                    </IonFabButton>
-                </IonFab>
-            </IonNavLink>
+            <IonFab slot="fixed" vertical="bottom" horizontal="center">
+                <IonFabButton onClick={() => {
+                    history.push('/mainhome/newentrymood')
+                }}>
+                    <IonIcon icon={add} className='icon-color-selected'></IonIcon>
+                </IonFabButton>
+            </IonFab>
             <IonFooter>
                 <div className='footer'>
                     {

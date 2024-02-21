@@ -4,7 +4,7 @@ bla bla bla
 
 <div align="center">
   <kbd>
-    <img src="" />
+    <img height="200px" width="200px" src="https://github.com/tommaso-caputi/journaling-app/blob/main/design/icon.png" />
   </kbd>
 </div>
 

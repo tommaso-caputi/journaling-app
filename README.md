@@ -45,6 +45,7 @@ ionic serve
 
 ### To-do
 
+- [ ] Page for edit entry
 - [ ] Add moods with icons
 - [ ] Send email for change pin
 - [ ] Multi language support

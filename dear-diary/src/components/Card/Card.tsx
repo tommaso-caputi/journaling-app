@@ -30,6 +30,7 @@ const Card: React.FC<CardProps> = ({ entry }) => {
             <IonCard onClick={() => {
                 setActualEntry(entry)
                 history.push('/mainhome/editentry')
+                window.location.reload();
             }}>
                 <IonCardHeader>
                     <IonCardTitle>{entry.title}</IonCardTitle>

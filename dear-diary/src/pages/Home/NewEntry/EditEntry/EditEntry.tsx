@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonFab, IonFabButton, IonIcon, IonPage } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonFab, IonFabButton, IonIcon, IonPage, IonToast } from '@ionic/react';
 import Header from '../../../../components/Header';
 import { useState } from 'react';
 import { Entry, getActualEntry, setActualEntry, updateEntry } from '../../../../data/data';
@@ -7,6 +7,7 @@ import './EditEntry.css';
 
 const EditEntry: React.FC = () => {
     const initialEntry = getActualEntry();
+    const [isOpen, setIsOpen] = useState(false);
     const [entry, setEntry] = useState<Entry>(initialEntry);
     const [editMode, setEditMode] = useState(false);
     const [editedEntry, setEditedEntry] = useState<Entry>(initialEntry);
@@ -19,7 +20,7 @@ const EditEntry: React.FC = () => {
         setEntry(editedEntry);
         updateEntry(editedEntry);
         toggleEditMode();
-        window.location.reload();
+        setIsOpen(true);
     };
 
     const handleEdit = (field: keyof Entry, value: string) => {
@@ -67,11 +68,6 @@ const EditEntry: React.FC = () => {
                         )}
                     </div>
 
-                    <IonFab slot="fixed" vertical="bottom" horizontal="end">
-                        <IonFabButton onClick={toggleEditMode}>
-                            <IonIcon icon={pencil}></IonIcon>
-                        </IonFabButton>
-                    </IonFab>
                     {editMode && (
                         <div className='container-buttons-edit'>
                             <IonButton className='margin-bottom-edit' onClick={handleSave}>
@@ -81,6 +77,17 @@ const EditEntry: React.FC = () => {
                     )}
                 </div>
             </IonContent>
+            <IonFab slot="fixed" vertical="bottom" horizontal="end">
+                <IonFabButton onClick={toggleEditMode}>
+                    <IonIcon icon={pencil}></IonIcon>
+                </IonFabButton>
+            </IonFab>
+            <IonToast
+                isOpen={isOpen}
+                message="Entry saved successfully"
+                onDidDismiss={() => setIsOpen(false)}
+                duration={5000}
+            ></IonToast>
         </IonPage>
     );
 };

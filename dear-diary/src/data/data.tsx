@@ -194,7 +194,7 @@ export const getLatestVersion = async () => {
         }
         const res = await response.json();
 
-        if (res.version === '2.2.1') {
+        if (res.version === '2.2.2') {
             return false;
         } else {
             return res;

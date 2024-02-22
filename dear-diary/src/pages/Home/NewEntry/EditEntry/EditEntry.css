@@ -1,0 +1,37 @@
+.container-buttons-edit {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.nomargin {
+    margin-bottom: 0px;
+}
+
+.margin-bottom-edit {
+    margin-bottom: 5.5%;
+    width: 80%;
+    margin-right: 5%;
+}
+
+.container-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.textarea-edit {
+    width: 100%;
+}
+
+.input-edit {
+    width: 100%;
+    outline: none;
+    background-color: var(--secondary-color);
+    margin-bottom: 3%;
+    margin-top: 2%;
+    border: 0cap;
+    border-radius: 10px;
+    padding: 5%;
+}

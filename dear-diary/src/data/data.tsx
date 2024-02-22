@@ -30,16 +30,37 @@ export const sha256 = async (s: string) => {
     return s;
 };
 
+const generateUUID = (): string => {
+    const s4 = (): string => {
+        return Math.floor((1 + Math.random()) * 0x100000000)
+            .toString(16)
+            .substring(1);
+    };
+    return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
+};
+
 export interface Entry {
     feeling: any;
     content: string;
     date: string;
     title: string;
     topics: string[];
+    id: string;
 }
 
+export const setActualEntry = (entry: Entry) => {
+    localStorage.setItem('actualEntry', JSON.stringify(entry))
+}
+export const getActualEntry = () => {
+    return JSON.parse(localStorage.getItem('actualEntry') || '{}') as Entry
+}
+
+export const getNewEntry = () => {
+    return JSON.parse(localStorage.getItem('newEntry') || '{}') as Entry
+}
 export const addNewEntry = (entry: Entry) => {
     const entries = JSON.parse(localStorage.getItem('entries') || '[]') as Entry[];
+    entry.id = generateUUID();
     entries.unshift(entry);
     localStorage.setItem('entries', JSON.stringify(entries));
 }
@@ -70,6 +91,18 @@ export const addDataToNewEntry = (title: string, date: string, content: string, 
     localStorage.setItem('newEntry', JSON.stringify(newEntry));
 
     addNewEntry(newEntry);
+}
+
+export const updateEntry = (entry: Entry) => {
+    const entries = JSON.parse(localStorage.getItem('entries') || '[]') as Entry[];
+    const updatedEntries = entries.map(item => {
+        if (item.id === entry.id) {
+            return entry;
+        }
+        return item;
+    });
+    localStorage.setItem('entries', JSON.stringify(updatedEntries));
+    setActualEntry(entry);
 }
 
 
@@ -131,3 +164,8 @@ export const topicIcons: TopicIcons = {
     "Health": bandage,
     "Sport": fitness,
 };
+
+
+export const getActualMood = () => {
+    return JSON.parse(localStorage.getItem('actualEntry') || '{}')['feeling'];
+}

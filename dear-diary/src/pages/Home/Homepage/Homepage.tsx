@@ -8,14 +8,6 @@ import { Entry } from '../../../data/data';
 const Homepage: React.FC = () => {
   const [entries, setEntries] = useState<Entry[]>(JSON.parse(localStorage.getItem('entries') || '[]'));
 
-  const truncateContent = (content: string): string => {
-    const maxLetters = 150;
-    if (content.length > maxLetters) {
-      return content.substring(0, maxLetters) + '...';
-    } else {
-      return content;
-    }
-  };
   const firstFiveEntries = entries.slice(0, 5);
 
   return (
@@ -41,7 +33,7 @@ const Homepage: React.FC = () => {
             <div className='bold3'>Recent entries</div>
             <div>
               {firstFiveEntries.map((entry, index) => (
-                <Card key={index} entry={{ ...entry, content: truncateContent(entry.content) }} />
+                <Card key={index} entry={entry} />
               ))}
             </div>
           </div>

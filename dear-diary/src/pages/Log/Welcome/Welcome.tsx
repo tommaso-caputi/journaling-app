@@ -18,7 +18,6 @@ const Welcome: React.FC = () => {
       console.log(v);
       if (v) {
         setUrlNewVersion(v['download_url']);
-        console.log(v);
         setIsOpen(true);
       }
     };

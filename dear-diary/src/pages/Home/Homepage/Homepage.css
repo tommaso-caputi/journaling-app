@@ -25,7 +25,7 @@
     border-radius: 100000px;
     border: 1px solid var(--secondary-color);
     box-sizing: border-box;
-    background-image: url('https://tommasocaputi.altervista.org/DearDiary/profile.jpeg');
+    background-image: url('./../../../assets/profile.jpeg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

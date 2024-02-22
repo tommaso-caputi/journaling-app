@@ -1,7 +1,7 @@
 import { IonButton, IonContent, IonInput, IonPage, IonToast } from '@ionic/react';
 import Header from '../../../components/Header';
 import './NewEntry.css';
-import { addDataToNewEntry, getNewEntry, setActualEntry } from '../../../data/data';
+import { addDataToNewEntry, getLatestEntry, setActualEntry } from '../../../data/data';
 import { useRef, useState } from 'react';
 import { useHistory } from 'react-router';
 
@@ -33,7 +33,7 @@ const NewEntry: React.FC = () => {
                 year: '2-digit'
             });
             addDataToNewEntry(titleValue.toString(), formattedDate, contentValue, placeValue.toString())
-            setActualEntry(getNewEntry());
+            setActualEntry(getLatestEntry());
             history.push('/mainhome/editentry');
             window.location.reload();
         }

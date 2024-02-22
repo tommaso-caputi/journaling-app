@@ -55,6 +55,11 @@ export const getActualEntry = () => {
     return JSON.parse(localStorage.getItem('actualEntry') || '{}') as Entry
 }
 
+export const getLatestEntry = () => {
+    const entries = JSON.parse(localStorage.getItem('entries') || '[]') as Entry[];
+    return entries[0];
+}
+
 export const getNewEntry = () => {
     return JSON.parse(localStorage.getItem('newEntry') || '{}') as Entry
 }

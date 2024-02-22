@@ -169,3 +169,27 @@ export const topicIcons: TopicIcons = {
 export const getActualMood = () => {
     return JSON.parse(localStorage.getItem('actualEntry') || '{}')['feeling'];
 }
+
+
+
+export const getLatestVersion = async () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    return fetch("https://tommasocaputi.altervista.org/DearDiary/webhook.php", {
+        method: "POST",
+        headers: myHeaders,
+        body: JSON.stringify({
+            "command": "getLatestVersion"
+        }),
+        redirect: "follow"
+    })
+        .then((response: any) => {
+            let res = response.json();
+            if (res['version'] == '2.2.0') { //here change the actual version
+                return false
+            } else {
+                return res
+            }
+        })
+        .catch((error) => console.error(error));
+}

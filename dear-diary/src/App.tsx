@@ -33,6 +33,7 @@ import Homepage from './pages/Home/Homepage/Homepage';
 import NewEntryMood from './pages/Home/NewEntry/NewEntryMood/NewEntryMood';
 import NewEntryTopic from './pages/Home/NewEntry/NewEntryTopic/NewEntryTopic';
 import NewEntry from './pages/Home/NewEntry/NewEntry';
+import EditEntry from './pages/Home/NewEntry/EditEntry/EditEntry';
 
 setupIonicReact({ mode: 'ios' });
 
@@ -65,6 +66,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/mainhome/newentry">
           <NewEntry />
+        </Route>
+        <Route exact path="/mainhome/editentry">
+          <EditEntry />
         </Route>
         <Route exact path="/mainhome/profile">
           <Profile />

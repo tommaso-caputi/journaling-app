@@ -30,4 +30,4 @@ yarn-error.log*
 
 resources/android/**/*
 
-firebaseService.js
+firebaseService.tsx
